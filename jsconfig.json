@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        // all import without a dot use the root folder as the initial path
+        "baseUrl": "."
+    }
+}

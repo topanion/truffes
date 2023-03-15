@@ -1,0 +1,56 @@
+[
+    {
+        "id": 0,
+        "username": "jerome",
+        "role": [
+            "admin",
+            "vet",
+            "user",
+            "dev"
+        ],
+        "password": "pediluve",
+        "firstName": "Développeur",
+        "lastName": "App"
+    },
+    {
+        "id": 1,
+        "username": "jrock",
+        "role": [
+            "admin"
+        ],
+        "password": "mdp",
+        "firstName": "Admin",
+        "lastName": "Session"
+    },
+    {
+        "id": 2,
+        "username": "yahoo",
+        "role": [
+            "user"
+        ],
+        "password": "mdp",
+        "firstName": "prénom",
+        "lastName": "NomDeFamille"
+    },
+    {
+        "id": 3,
+        "username": "oizo",
+        "role": [
+            "user"
+        ],
+        "password": "mdp",
+        "firstName": "Oiseau",
+        "lastName": "Nocturne"
+    },
+    {
+        "id": 4,
+        "username": "veto",
+        "role": [
+            "user",
+            "vet"
+        ],
+        "password": "mdp",
+        "firstName": "Oiseau",
+        "lastName": "Nocturne"
+    }
+]
