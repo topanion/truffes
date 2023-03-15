@@ -28,7 +28,7 @@ export default function Family() {
 					router.push("/familles");
 				}
 			});
-	}, [router.isReady]);
+	}, [router, router.isReady]);
 
 	return (
 		<>
@@ -40,10 +40,10 @@ export default function Family() {
 								<FamilyGeneral {...family} />
 								{animals && (
 									<Openable name="Voir les animaux">
-										{animals.map((e) => {
+										{animals.map((e, index) => {
 											console.log(e);
 											return (
-												<InfoDiv>
+												<InfoDiv key={index}>
 													{e.nom} {e.sexe === 1 ? "♂" : "♀"} {e.espece}
 												</InfoDiv>
 											);

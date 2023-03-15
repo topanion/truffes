@@ -32,7 +32,7 @@ export default function Families() {
 					console.log("erreur");
 				}
 			});
-	}, []);
+	}, [router]);
 
 	function setThisChecked(index) {
 		var tmp = [...checked];

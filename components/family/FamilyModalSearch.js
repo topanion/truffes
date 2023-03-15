@@ -27,7 +27,7 @@ export default function FamilyModalSearch(props) {
 					console.log(err);
 				}
 			});
-	}, []);
+	}, [router]);
 
 	function setResults(input) {
 		if (input === "" || input.length < 2) {

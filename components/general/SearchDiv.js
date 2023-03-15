@@ -43,7 +43,7 @@ export default function SearchDiv({ category }) {
 					console.log(err);
 				}
 			});
-	}, []);
+	}, [router, category]);
 
 	function setThisChecked(index) {
 		var tmp = [...filters];

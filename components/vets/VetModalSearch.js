@@ -27,7 +27,7 @@ export default function VetModalSearch(props) {
 					console.log("erreur");
 				}
 			});
-	}, []);
+	}, [router]);
 
 	function setResults(input) {
 		if (input === "" || input.length < 2) {

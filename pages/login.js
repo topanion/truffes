@@ -1,19 +1,24 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { userService } from "services/user-service";
 
 export default function Login() {
 	const router = useRouter();
-	var user = null;
+	const [current, setCurrent] = useState(null);
+	const [user, setUser] = useState(null);
 
 	useEffect(() => {
 		// redirect to home if already logged in
-		user = JSON.parse(localStorage.getItem("user"));
+		if (!user) {
+			setUser(JSON.parse(localStorage.getItem("user")));
+			setCurrent(user);
+			//user = JSON.parse(localStorage.getItem("user"));
+		}
 		if (user && user.token) {
 			console.log("Already logged, directed to root");
 			router.push("/");
 		}
-	}, []);
+	}, [router, user, current]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

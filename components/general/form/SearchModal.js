@@ -36,7 +36,7 @@ export default function SearchModal({
 					console.log(err);
 				}
 			});
-	}, []);
+	}, [router, table]);
 
 	function setResults(input) {
 		if (input === "" || input.length < 2) {

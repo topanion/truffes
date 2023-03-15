@@ -13,7 +13,7 @@ export default function Home() {
 			userService.logout();
 			router.push("/login");
 		}
-	}, []);
+	}, [user, router]);
 
 	return (
 		<>

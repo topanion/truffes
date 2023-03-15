@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
+	reactStrictMode: false,
 	serverRuntimeConfig: {
 		secret: "my favorite pokemon is lugia",
 		supaUrl: "https://tjxijdmwqzvbijoushkm.supabase.co",

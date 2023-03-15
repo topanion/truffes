@@ -82,8 +82,12 @@ export function FormInput({
 			value: (
 				<select className="text-black p-1 rounded" {...register(db_value)}>
 					{options &&
-						options.map((e) => {
-							return <option value={e.value}>{e.text}</option>;
+						options.map((e, index) => {
+							return (
+								<option key={e.value + index} value={e.value}>
+									{e.text}
+								</option>
+							);
 						})}
 				</select>
 			),
@@ -108,11 +112,15 @@ export function FormInput({
 			className="text-center items-center text-sm p-1"
 		>
 			{label && <div className="text-white">{label} :</div>}
-			{output.map((e) => {
+			{output.map((e, index) => {
 				return e.type === type ? e.value : null;
 			})}
 			{child && condition(watch(db_value)) && (
-				<FormInput key={label + " child"} {...child} register={register} />
+				<FormInput
+					key={label + " child" + index}
+					{...child}
+					register={register}
+				/>
 			)}
 			{open && { children }}
 		</div>

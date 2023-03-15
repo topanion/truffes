@@ -9,6 +9,25 @@ function MyApp({ Component, pageProps }) {
 
 	useEffect(() => {
 		// check if user is logged
+		// redirect to login page if accessing a private page and not logged in
+		const authCheck = (url) => {
+			const user = localStorage.getItem("user");
+			const publicPaths = ["/login"];
+			// check if path = /login (+ potential login request that failed)
+			const path = url.split("?")[0];
+			// if user is not connected and the user is indeed doing something else than login
+			if (!user && !publicPaths.includes(path)) {
+				setAuthorized(false);
+				console.log("redirected to login");
+				router.push({
+					// go to login page
+					pathname: "/login",
+					query: { returnUrl: router.asPath },
+				});
+			} else {
+				setAuthorized(true);
+			}
+		};
 		authCheck(router.asPath);
 
 		// set authorized to false to hide page content while changing routes
@@ -23,27 +42,7 @@ function MyApp({ Component, pageProps }) {
 			router.events.off("routeChangeStart", hideContent);
 			router.events.off("routeChangeComplete", authCheck);
 		};
-	}, []);
-
-	// redirect to login page if accessing a private page and not logged in
-	function authCheck(url) {
-		const user = localStorage.getItem("user");
-		const publicPaths = ["/login"];
-		// check if path = /login (+ potential login request that failed)
-		const path = url.split("?")[0];
-		// if user is not connected and the user is indeed doing something else than login
-		if (!user && !publicPaths.includes(path)) {
-			setAuthorized(false);
-			console.log("redirected to login");
-			router.push({
-				// go to login page
-				pathname: "/login",
-				query: { returnUrl: router.asPath },
-			});
-		} else {
-			setAuthorized(true);
-		}
-	}
+	}, [router]);
 
 	return (
 		<div>

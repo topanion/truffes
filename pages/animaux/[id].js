@@ -40,7 +40,7 @@ export default function Animal() {
 					router.push("/animaux");
 				}
 			});
-	}, [router.isReady]);
+	}, [router, router.isReady]);
 
 	return (
 		<>

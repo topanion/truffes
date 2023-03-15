@@ -39,8 +39,12 @@ export function FormInput({
 			value: (
 				<select className="text-black p-1 rounded" {...register()}>
 					{options &&
-						options.map((e) => {
-							return <option value={e.value}>{e.text}</option>;
+						options.map((e, index) => {
+							return (
+								<option key={index} value={e.value}>
+									{e.text}
+								</option>
+							);
 						})}
 				</select>
 			),

@@ -43,7 +43,7 @@ export default function Animals() {
 					console.log("erreur");
 				}
 			});
-	}, []);
+	}, [router]);
 
 	// For filter buttons to function
 	function setThisChecked(index) {

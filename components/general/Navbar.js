@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { userService } from "services/user-service";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function NavButton(props) {
 	const router = useRouter();
@@ -32,12 +33,12 @@ export default function Navbar() {
 			<nav className="fixed w-screen flex flex-wrap items-center justify-between px-2  bg-gray-900 mb-3 border-b z-10">
 				<div className="w-[70vw] container px-4 mx-auto flex flex-wrap items-center justify-between">
 					<div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-						<a
+						<Link
 							className="text-xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white"
 							href="/"
 						>
 							Truffes Sans Toit
-						</a>
+						</Link>
 						<button
 							className={` text-white cursor-pointer text-xl leading-none rounded ${
 								navbarOpen ? "bg-gray-700" : "bg-transparent"

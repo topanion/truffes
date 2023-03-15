@@ -12,7 +12,7 @@ export default function AnimalsDev() {
 
 	useEffect(() => {
 		if (!userService.isDev()) router.push("/animaux");
-	}, []);
+	}, [router]);
 
 	return (
 		<>
